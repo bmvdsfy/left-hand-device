@@ -5,23 +5,23 @@ import time
 class KeyStroke:
     def __init__(self) -> None:
         None
-    def undo() -> None:
+    def undo(self) -> None:
         pyautogui.keyDown("command")
         pyautogui.press("z")
         pyautogui.keyUp("command")
     
-    def redo() -> None:
+    def redo(self) -> None:
         pyautogui.keyDown("command")
         pyautogui.hotkey("shiftleft", "z")
         pyautogui.keyUp("command")
 
-    def save() -> None:
+    def save(self) -> None:
         pyautogui.keyDown("command")
         pyautogui.press("s")
         pyautogui.keyUp("command")
 
     
-    def nextPage() -> None:
+    def nextPage(self) -> None:
         pyautogui.keyDown("command")
         pyautogui.keyDown("option")
 
@@ -29,7 +29,7 @@ class KeyStroke:
         pyautogui.keyUp("option")
         pyautogui.keyUp("command")
 
-    def prevPage() -> None:
+    def prevPage(self) -> None:
         pyautogui.keyDown("command")
         pyautogui.keyDown("option")
 

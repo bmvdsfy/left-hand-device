@@ -14,17 +14,17 @@ app = Flask(__name__, static_folder=".")
 def form():
     # ２回目以降データが送られてきた時の処理です
     if request.method == 'POST':
-        ks = KeyStroke()
-        ks.nextPage()
-        time.sleep(1)
-        ks.prevPage()
+        # ks = KeyStroke()
+        # ks.nextPage()
+        # time.sleep(1)
+        # ks.prevPage()
 
-        # print("POSTされたIDは？" + str(request.form['id']))
-        # print("POSTされたPASSWORDは？" + str(request.form['pwd']))
         return render_template('form.html')
-    # １回目のデータが何も送られてこなかった時の処理です。
+    
     if request.method == 'GET':
         return render_template('form.html')
+
+
 
 if __name__ == "__main__":
     args = get_option()
