@@ -1,7 +1,9 @@
-import os
-from flask import Flask, render_template, request
-from output import KeyStroke
+import sys
 import time
+
+from flask import Flask, render_template, request
+from option_parser import get_option
+from output import KeyStroke
 
 app = Flask(__name__, static_folder=".")
 
@@ -25,5 +27,9 @@ def form():
         return render_template('form.html')
 
 if __name__ == "__main__":
-    app.run(port=1145)
-    # app.run(port=1145, debug=False, host="0.0.0.0")
+    args = get_option()
+
+    if args.host:
+        app.run(port=1145, debug=False, host="0.0.0.0")
+    else:
+        app.run(port=1145)
