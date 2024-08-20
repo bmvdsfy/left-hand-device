@@ -27,6 +27,6 @@ if __name__ == "__main__":
     args = get_option()
 
     if args.host:
-        app.run(port=1145, debug=False, host="0.0.0.0")
+        app.run(port=2109, debug=False, host="0.0.0.0")
     else:
-        app.run(port=1145)
+        app.run(port=2109)
