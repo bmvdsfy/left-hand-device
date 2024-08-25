@@ -3,14 +3,18 @@
 <head>
   <title>form練習</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/form-style.css') }}" />
-  <!-- <link rel="stylesheet" href="../static/form-style.css" /> -->
+  <script src="{{ url_for("static", filename="js/form.js") }}"></script>
 </head>
 <body>
   <form method="POST">
     <input type="text" name="id" placeholder="userID">
     <input type="password" name="pwd" placeholder="Password">
     <input type="submit" value="送信">
-    <button type="submit" name="button">press</button>
+    <button type="submit" name="button" value="button1">press</button>
+
+    {% for shortcut in shortcuts %}
+    <button type="submit" name="shortcut" value="{{ shortcut }}" id="{{ shortcut }}">{{ shortcut }}</button>
+    {% endfor %}
   </form>
 </body>
 </html>

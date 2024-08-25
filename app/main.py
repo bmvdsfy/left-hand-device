@@ -16,8 +16,9 @@ def form():
         # ks.nextPage()
         # time.sleep(1)
         # ks.prevPage()
-
-        return render_template('form.html')
+        print(request.form.get("shortcut"))
+    
+        return render_template('form.html', shortcuts=["ctr+z", "ctrl+y", "alt+f4"])
     
     if request.method == 'GET':
         return render_template('form.html')
