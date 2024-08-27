@@ -1,45 +1,63 @@
 {
-  "Windows": {
-    "system": [
-      {
-        "name": "closeWindow",
-        "KeyStroke": ["alt", "f4"]
-      }
-    ],
-    "common": [
-      {
-        "name": "closeTab",
-        "KeyStroke": ["ctrl", "W"]
-      },
-      {
-        "name": "restoreTab",
-        "KeyStroke": ["ctrl", "T"]
-      }
-    ]
-    
-  },
-  "MacOS": {
-    "system": [
-      {
-        "name": "closeApp",
-        "KeyStroke": ["command", "Q"]
-      }
-    ],
-    "common": [
-
-    ],
-    "background": [
-
-    ],
-    "VisualStudioCode": [
-      {
-        "name": "Undo",
-        "KeyStroke": ["command", "Z"]
-      },
-      {
-        "name": "Redo",
-        "KeyStroke": ["command", "shift", "Z"]
-      }
-    ]
+  "Windows": [
+    {
+      "appName": "system",
+      "content": [
+        {
+          "name": "closeWindow",
+          "KeyStroke": ["alt", "f4"]
+        }
+      ]
+    },
+    {
+      "appName": "common",
+      "content": [
+        {
+          "name": "closeTab",
+          "KeyStroke": ["ctrl", "W"]
+        },
+        {
+          "name": "restoreTab",
+          "KeyStroke": ["ctrl", "T"]
+        }
+      ]
     }
+    
+  ],
+  "MacOS": [
+    {
+      "appName": "system",
+      "content": [
+        {
+          "name": "closeApp",
+          "KeyStroke": ["command", "Q"]
+        }
+      ]
+    },
+    {
+      "appName": "common",
+      "content": [
+        
+      ]
+    },
+    {
+      "appName": "background",
+      "content": [
+        
+      ]
+    },
+    {
+      "appName": "VisualStudioCode",
+      "content": [
+        {
+          "name": "Undo",
+          "KeyStroke": ["command", "Z"]
+        },
+        {
+          "name": "Redo",
+          "KeyStroke": ["command", "shift", "Z"]
+        }
+      ]
+    }
+  ]
 }
