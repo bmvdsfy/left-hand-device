@@ -17,7 +17,7 @@
       }
     ],
     "applications": [
-
+      
     ]
     
   },
@@ -29,25 +29,25 @@
       }
     ],
     "common": [
-
+      
     ],
     "background": [
-
+      
     ],
     "applications": [
-    {
-      "appName": "VisualStudioCode",
-      "content": [
-        {
-          "name": "Undo",
-          "KeyStroke": ["command", "Z"]
-        },
-        {
-          "name": "Redo",
-          "KeyStroke": ["command", "shift", "Z"]
-        }
-      ]
-    }
-  ]
+      {
+        "appName": "VisualStudioCode",
+        "content": [
+          {
+            "name": "Undo",
+            "KeyStroke": ["command", "Z"]
+          },
+          {
+            "name": "Redo",
+            "KeyStroke": ["command", "shift", "Z"]
+          }
+        ]
+      }
+    ]
   }
 }
