@@ -1,0 +1,45 @@
+{
+  "Windows": {
+    "system": [
+      {
+        "name": "closeWindow",
+        "KeyStroke": ["alt", "f4"]
+      }
+    ],
+    "common": [
+      {
+        "name": "closeTab",
+        "KeyStroke": ["ctrl", "W"]
+      },
+      {
+        "name": "restoreTab",
+        "KeyStroke": ["ctrl", "T"]
+      }
+    ]
+    
+  },
+  "MacOS": {
+    "system": [
+      {
+        "name": "closeApp",
+        "KeyStroke": ["command", "Q"]
+      }
+    ],
+    "common": [
+
+    ],
+    "background": [
+
+    ],
+    "VisualStudioCode": [
+      {
+        "name": "Undo",
+        "KeyStroke": ["command", "Z"]
+      },
+      {
+        "name": "Redo",
+        "KeyStroke": ["command", "shift", "Z"]
+      }
+    ]
+    }
+}
