@@ -2,7 +2,7 @@
 from keytype import Shortcut
 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect
 from option import get_option
 
 from output import key_press
@@ -47,12 +47,12 @@ shortcuts: list[Shortcut] = [
     },
     {
         "id": 8,
-        "name": "previousPage",
+        "name": "previousTab",
         "key": ["command", "option", "left", ]
     },
     {
         "id": 9,
-        "name": "nextPage",
+        "name": "nextTab",
         "key": ["command", "option", "right", ]
     }
 ]
@@ -73,8 +73,8 @@ def form():
             if shortcut["name"] == requested_shortcut:
                 key_press(shortcut)
                 break
-    
-        return render_template('form.html', shortcut_lists=shortcuts, column=3, row=3)
+        
+        return redirect(url_for("form"))
     
     if request.method == 'GET':
         return render_template('form.html', shortcut_lists=shortcuts, column=3, row=3)
