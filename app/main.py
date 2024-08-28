@@ -1,62 +1,13 @@
 # import time
-from keytype import Shortcut
 
 
-from flask import Flask, render_template, request, url_for, redirect
+from config.config import shortcuts
+from config.general import general_config
+from flask import Flask, redirect, render_template, request, url_for
 from option import get_option
-
 from output import key_press
 
 app = Flask(__name__)
-
-shortcuts: list[Shortcut] = [
-    {
-        "id": 1,
-        "name": "undo",
-        "key": ["command", "z"]
-    },
-    {
-        "id": 2,
-        "name": "redo",
-        "key": ["command", "shiftleft", "z"]
-    },
-    {
-        "id": 3,
-        "name": "none",
-        "key": []
-    },
-    {
-        "id": 4,
-        "name": "none",
-        "key": []
-    },
-    {
-        "id": 5,
-        "name": "none",
-        "key": []
-    },
-    {
-        "id": 6,
-        "name": "none",
-        "key": []
-    },
-    {
-        "id": 7,
-        "name": "検索",
-        "key": ["command", "l", ]
-    },
-    {
-        "id": 8,
-        "name": "previousTab",
-        "key": ["command", "option", "left", ]
-    },
-    {
-        "id": 9,
-        "name": "nextTab",
-        "key": ["command", "option", "right", ]
-    }
-]
-
 
 
 
@@ -77,7 +28,7 @@ def form():
         return redirect(url_for("form"))
     
     if request.method == 'GET':
-        return render_template('form.html', shortcut_lists=shortcuts, column=3, row=3)
+        return render_template('form.html', shortcuts=shortcuts, column=general_config["column"], row=general_config["row"])
 
 
 if __name__ == "__main__":
