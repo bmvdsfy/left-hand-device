@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>form練習</title>
+  <title>main</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/form-style.css') }}" />
+  <script src="{{ url_for("static", filename="js/form.js") }}"></script>
   <style>
     /* html{overflow: hidden;} */
     body {
       margin: 0;
       overflow: hidden;
-      /* touch-action: pan-x pan-y; */
+      touch-action: pan-x pan-y;
     }
     
     .button-container {
@@ -50,5 +52,7 @@
     {% endfor %}
     
   </form>
+  <p id="x">a</p>
+  <p id="y"></p>
 </body>
 </html>
