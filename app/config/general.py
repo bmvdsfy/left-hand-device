@@ -1,4 +1,4 @@
 general_config = {
-    "row": 5,
-    "column": 5
+    "row": 3,
+    "column": 3
 }
