@@ -12,10 +12,11 @@
 [Ll]ocal
 [Ss]cripts
 pyvenv.cfg
-.venv
+venv
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/venv
 
 **/__pycache__/**
 memo.md
+key
