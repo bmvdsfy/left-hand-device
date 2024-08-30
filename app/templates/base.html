@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>main</title>
+  <!-- <script src="{{ url_for("static", filename="js/form.js") }}"></script> -->
+  <style>z
+    body {
+      margin: 0;
+      overflow: hidden;
+      touch-action: pan-x pan-y;
+    }
+    {%block style %}{% endblock %} 
+  </style>
+</head>
+<body>
+  <form method="POST" class="button-container">
+    {% for shortcut in shortcuts %}
+    <button type="submit" name="shortcut" value="{{ shortcut.name }}" class="button"
+    style="
+    grid-row: {{ shortcut.position.row }} / {{ shortcut.position.row + 1}};
+    grid-column: {{ shortcut.position.column }} / {{ shortcut.position.column + 1}};
+    ">
+      {{ shortcut.name }}
+    </button>
+    {% endfor %}
+    
+  </form>
+  <audio src="{{ url_for("static", filename="sound/tap.mp3") }}"></audio>
+
+    <script>
+      const buttons = document.querySelectorAll(".button");
+      const audio = document.querySelector("audio");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          audio.currentTime = 0;
+          audio.play();
+        });
+      });
+    </script>
+  <!-- <p id="x">a</p>
+  <p id="y"></p> -->
+</body>
+</html>

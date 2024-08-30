@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block style %}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat({{ column }}, 1fr);
+  grid-template-rows: repeat({{ row }}, 1fr);
+  grid-gap: 1.5rem;
+  margin: 0 auto;
+  background-color: #383c3e;
+  padding: 1rem;
+  width: 100vw;
+  height: 100svh;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: sans-serif;
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #eee;
+  text-shadow: 1px 1px 0 #45494c, -1px 1px 0 #45494c, -1px -1px 0 #45494c,
+    1px -1px 0 #45494c;
+
+  width: 100%;
+  height: 100%;
+  background-color: #505558;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border: 2px solid #4f5257;
+
+  user-select: none;
+  cursor: pointer;
+}
+{% endblock %}

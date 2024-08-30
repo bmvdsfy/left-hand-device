@@ -5,7 +5,7 @@ from config.config import shortcuts
 from config.general import general_config
 from flask import Flask, redirect, render_template, request, url_for
 from option import get_option
-from output import key_press
+from output import proceed_shortcut
 from exept import exept_out_of_range
 
 app = Flask(__name__)
@@ -19,12 +19,12 @@ def form():
     # ２回目以降データが送られてきた時の処理
     if request.method == 'POST':
         #リクエストされたボタンに対応するショートカットを実行
-        print(request.form.get("shortcut"))
+        print(r'requested "' + request.form.get("shortcut") + r'"')
         requested_shortcut = request.form.get("shortcut")
 
         for shortcut in shortcuts:
             if shortcut["name"] == requested_shortcut:
-                key_press(shortcut)
+                proceed_shortcut(shortcut)
                 break
         
         #リロード対策のリダイレクト
@@ -32,7 +32,9 @@ def form():
     
     if request.method == 'GET':
         exept_out_of_range(shortcuts, general_config)
-        return render_template('form.html', shortcuts=shortcuts, column=general_config["column"], row=general_config["row"])
+        template = render_template(general_config["style"], shortcuts=shortcuts, column=general_config["column"], row=general_config["row"])
+        # print(template)
+        return template
 
 
 if __name__ == "__main__":
